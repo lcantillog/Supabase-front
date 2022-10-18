@@ -1,0 +1,42 @@
+<div class="content" role="main">
+
+
+  <!-- Resources -->
+  <h2>Inicio de sesion</h2>
+  <p>Te damos la bienvenida</p>
+  
+
+  <!-- Links -->
+  <div class="card-container ">
+    
+    <form [formGroup]="login">
+
+      <div class="flex justify-content-center">
+
+        <div class="position-relative w-100">
+          <label class="label-login w-100" for="correo">Correo electrónico</label>
+          <div class="row justify-content-center">
+            <input class="col-sm-10 col-md-6" autocomplete="off" type="text" id="correo" 
+              formControlName="correo"
+              placeholder="Correo">
+          </div>
+        </div>
+
+        <div class="position-relative w-100 my-4">
+          <label class="label-login w-100" for="correo">Contraseña</label>
+          <div class="row justify-content-center">
+            <input class="col-sm-10 col-md-6" autocomplete="off" type="password" id="contrasena"
+              formControlName="contrasena" placeholder="Contraseña">
+          </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <button class="col-sm-10 col-md-6" (click)=" loguear()">
+            Iniciar sesión
+          </button>
+        </div>
+ 
+      </div>
+    </form>
+  </div>
+
+</div>
