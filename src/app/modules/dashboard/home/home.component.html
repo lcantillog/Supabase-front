@@ -1,117 +1,142 @@
-<div class="toolbar" role="banner">
-  <img width="40" alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
-  <span>Dashboar</span>
-  <div class="spacer"></div>
+<div class="lg:flex lg:items-center lg:justify-between">
+  <div class="min-w-0 flex-1">
+    <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">Dashboard Spring
+      Boot</h2>
+  </div>
+  <div class="mt-5 flex lg:mt-0 lg:ml-4 md:flex-1">
 
-</div>
-
-<div class="content" role="main">
-
-
-  <!-- Resources -->
-  <h2>Resources</h2>
-  <p>Here are some links to help you get started:</p>
-
-  <input type="hidden" #selection>
-
-  <div class="card-container">
-    <button class="card card-small" tabindex="0" (click)="getChiste()">
-      <svg class="material-icons" width="24" height="24" xmlns="http://www.w3.org/2000/svg" class="ionicon"
-        viewBox="0 0 512 512">
-        <title>Eye</title>
-        <path
-          d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z"
-          fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
-        <circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
-      </svg>
-      <span>Get Jokes</span>
-    </button>
-
-    <button class="card card-small" (click)="getFavorito()" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" class="ionicon" width="24" height="24"
-        viewBox="0 0 512 512">
-        <title>Star</title>
-        <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none" stroke="currentColor"
-          stroke-linejoin="round" stroke-width="32" />
-      </svg>
-
-      <span>My Jokes</span>
-    </button>
+    <span class="hidden sm:block">
+      <button type="button" (click)="getChiste()"
+        class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+        <svg class="material-icons ionicon mr-2" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512">
+          <title>Eye</title>
+          <path
+            d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z"
+            fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
+          <circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32" />
+        </svg>
+        Get Jokes
+      </button>
+    </span>
+    <span class="ml-3 hidden sm:block">
+      <button type="button" (click)="getFavorito()"
+        class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+        <svg class="material-icons ionicon mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+          viewBox="0 0 512 512">
+          <title>Star</title>
+          <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+            stroke="currentColor" stroke-linejoin="round" stroke-width="32" />
+        </svg>
+        My Jokes
+      </button>
+    </span>
   </div>
 
-  <ng-template [ngIf]="!getJokes && !myJokes">    
-      <p>Dashboard</p>
-  </ng-template>
-
+</div>
+<div class="justify-center mt-6">
   <ng-template [ngIf]="getJokes">
-    <div class="container-fluid">
-      <div class="row justify-content-center scroll listado">
-        <div class="d-flex flex-column my-3 item-soli card_solisitedes">
-          <div class="general">
-            <div class="col-r2">
-              <div class="row-1">
-                <p class="titulo-r">Id Chiste</p>
-                <p class="fecha">{{chiste.idChuckNorris}}</p>
-              </div>
-              <div class="space-res">
-                <div class="row-2">
-                  <div class="col-r">
-                    <h6 class="sub-titulo">Valor</h6>
-                    <h5 class="sub-text">{{chiste.valorChuckNorris}}</h5>
-                  </div>
-                </div>
-                <div class="row-2">
-                  <div class="col-r">
-                    <h6 class="sub-titulo">Url Icono</h6>
-                    <h5 class="sub-text">{{chiste.iconoUrl}}</h5>
-                  </div>
-                </div>
-                <div class="row-3">
-                  <div class="col-r">
-                    <h6 class="sub-titulo">Url</h6>
-                    <h5 class="sub-text">{{chiste.urlChuckNorris}}</h5>
-                  </div>
-                  <div>
-                    <button (click)="addFavorito()"> Favorito</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <form class="w-full max-w-lg">
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+            Id
+          </label>
+          <label
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            id="grid-first-name" type="text" placeholder="Jane">
+            {{chiste.idChuckNorris}}
+          </label>
+        </div>
+        <div class="w-full md:w-1/2 px-3">
+          <button type="button" (click)="addFavorito()"
+            class="mt-6 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <svg class="material-icons ionicon mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 512 512">
+              <title>Star</title>
+              <path d="M480 208H308L256 48l-52 160H32l140 96-54 160 138-100 138 100-54-160z" fill="none"
+                stroke="currentColor" stroke-linejoin="round" stroke-width="32" />
+            </svg>
+            Add Favorito
+          </button>
+          <button type="button" (click)="getChiste()"
+            class="mt-6 ml-2 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px">    <path d="M 2 2 L 4.9394531 4.9394531 C 3.1262684 6.7482143 2 9.2427079 2 12 C 2 17.514 6.486 22 12 22 C 17.514 22 22 17.514 22 12 C 22 6.486 17.514 2 12 2 L 12 4 C 16.411 4 20 7.589 20 12 C 20 16.411 16.411 20 12 20 C 7.589 20 4 16.411 4 12 C 4 9.7940092 4.9004767 7.7972757 6.3496094 6.3496094 L 9 9 L 9 2 L 2 2 z"/></svg>
+          </button>
         </div>
       </div>
-    </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+            Valor
+          </label>
+          <label
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-password">
+            {{chiste.valorChuckNorris}}
+          </label>
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+            Url
+          </label>
+          <label
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-password">
+            {{chiste.urlChuckNorris}}
+          </label>
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full px-3">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+            Icono Url
+          </label>
+          <label
+            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-password">
+            {{chiste.iconoUrl}}
+          </label>
+        </div>
+      </div>
+      <div class="flex flex-wrap -mx-3 mb-6">
+
+        <div class="w-full md:w-1/2 px-3 lg-end">
+
+        </div>
+      </div>
+    </form>
   </ng-template>
 
-  <ng-template  [ngIf]="myJokes">
 
-    <table class="table table-striped">
+  <ng-template [ngIf]="myJokes">
+    <table class="table-auto">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col" sortable="name" >Valor</th>
-          <th scope="col" sortable="area"  >Url</th>
-          <th scope="col" sortable="population" >Icono</th>
-          <th scope="col" sortable="population" >Aciones</th>
+          <th>Id</th>
+          <th>Valor</th>
+          <th>Url</th>
+          <th>Icono Url</th>
+          <th>Accion</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of favoritos">
-          <th scope="row">{{ item.idChuckNorris }}</th>
-          <td> 
-            {{ item.valorChuckNorris }}
-          </td>
-          <td>{{ item.urlChuckNorris}}</td>
-          <td>{{ item.iconoUrl }}</td>
+          <td>{{item.idChuckNorris}}</td>
+          <td>{{item.valorChuckNorris}}</td>
+          <td>{{item.urlChuckNorris}}</td>
+          <td>{{item.iconoUrl}}</td>
           <td>
-             <button (click)="deleteFavorito(item.idChuckNorris)">Eliminar</button>
+            <button type="button" (click)="deleteFavorito(item.idChuckNorris)"
+              class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+              <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px">    <path d="M 10 2 L 9 3 L 4 3 L 4 5 L 20 5 L 20 3 L 15 3 L 14 2 L 10 2 z M 5 7 L 5 20 C 5 21.1 5.9 22 7 22 L 17 22 C 18.1 22 19 21.1 19 20 L 19 7 L 5 7 z M 8 9 L 10 9 L 10 20 L 8 20 L 8 9 z M 14 9 L 16 9 L 16 20 L 14 20 L 14 9 z"/></svg>
+              
+            </button>
           </td>
         </tr>
       </tbody>
     </table>
   </ng-template>
-
-
-
 </div>
