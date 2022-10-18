@@ -21,9 +21,17 @@ export class FormDashboardComponent implements OnInit {
         this.router.navigate(['/dashboard/spring-boot']);
         break;
       default:
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard/spring-boot']);
         break;
     }
 
+  }
+
+  logout(){
+    localStorage.clear();
+    localStorage.clear();
+    setTimeout(() => {
+      this.router.navigate(['/login'])
+    }, 100);
   }
 }

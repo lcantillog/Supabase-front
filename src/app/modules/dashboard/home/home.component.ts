@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Chiste } from 'src/app/core/models/Dashboard.models';
 import { DashboardService } from 'src/app/core/services/dashboard.service';
 import Swal from 'sweetalert2';
@@ -21,7 +22,8 @@ export class HomeComponent implements OnInit {
   getJokes: boolean = false;
   myJokes: boolean = false;
   constructor(
-    private _dashboardService: DashboardService
+    private _dashboardService: DashboardService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -70,4 +72,6 @@ export class HomeComponent implements OnInit {
       }
     })
   }
+
+
 }

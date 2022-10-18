@@ -23,11 +23,10 @@ export class AuthService {
       "nombreUsuario": user,
       "password": pass
     }
-        debugger;
+    
     console.log(data)
     return this._utilityService.postQuery( this._appSettings.auth.url.login, data)
       .pipe(map((res: any) => {
-        debugger;
         this.saveSession(res.data);
         return true;
       }));

@@ -25,8 +25,12 @@ export class InicioSesionComponent implements OnInit {
   }
 
   loguear() {
-    this._authService.postSession(this.formLogin.value.correo, this.formLogin.value.contrasena).subscribe(respuesta => {
-      this.router.navigate(['/dashboard']);
+    this._authService.postSession(this.formLogin.value.correo, 
+                                  this.formLogin.value.contrasena).subscribe((res:any) => {
+      
+      if (res) {
+        this.router.navigate(['/dashboard']);        
+      }
     });
   }
 

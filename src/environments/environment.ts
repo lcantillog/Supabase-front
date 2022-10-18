@@ -6,8 +6,8 @@ export const environment = {
   production: false,
   urlApi:"http://localhost:8080/",
   supabase: {
-    url: 'https://wzlpmcsxrxogtctlznel.supabase.co',
-    key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzNTA4NjA1MCwiZXhwIjoxOTUwNjYyMDUwfQ.CzFuYS6XKvEwW5OsAAPAcHvuo-NVE4PUwDSKgqK9Yas',
+    url: 'https://gbphwjbubbyfgnqztdxz.supabase.co',
+    key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdicGh3amJ1YmJ5ZmducXp0ZHh6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjU3NjM5MzMsImV4cCI6MTk4MTMzOTkzM30.YEBdzeuJuqRkMhvVVC4NPasKF1h9NG9L5vg2gBpMy2Q',
   },
 };
 

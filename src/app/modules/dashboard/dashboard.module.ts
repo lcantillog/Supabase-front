@@ -9,7 +9,7 @@ import { FormDashboardComponent } from './form-dashboard/form-dashboard.componen
 @NgModule({
   declarations: [
     HomeComponent,
-    FormDashboardComponent
+    FormDashboardComponent,
   ],
   imports: [
     CommonModule,
